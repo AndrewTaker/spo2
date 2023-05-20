@@ -291,6 +291,14 @@ class Organisation:
 
 
 def main():
+    directories = ['archive', 'reports']
+    for directory in directories:
+        if directory in os.listdir():
+            continue
+        else:
+            os.mkdir(directory)
+            print(f'Создана папка "{directory}"')
+
     while True:
         current_time = datetime.now().time()
         if current_time > START and current_time < END:
